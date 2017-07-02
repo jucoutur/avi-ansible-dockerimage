@@ -4,7 +4,7 @@
 # TO DO 
 #  add volume statement to map to /tmp ?
 #  optimize size (currently 670MB ...)
-# add ENV 
+#  add ENV 
 
 FROM ubuntu:16.04
 LABEL maintainer="stefb12@gmail.com"
