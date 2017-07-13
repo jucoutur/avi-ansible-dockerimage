@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y \
 	dialog \
 	software-properties-common \
 	python-pip \
-	python-dnspython \			
+	python-dnspython \
+	python-netaddr \
 	vim \
 	net-tools \
 	inetutils-ping \
