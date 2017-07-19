@@ -11,7 +11,7 @@ LABEL maintainer="stefb12@gmail.com"
 
 RUN echo 'installing some useful packages:' 
 RUN echo 'dialog apt-utils software-properties-common' 
-RUN echo 'python-pip python-dnspython (needed for DNS lookups with ansible)' 
+RUN echo 'python-pip python-dnspython (needed for DNS lookups with ansible) python-netaddr' 
 RUN echo 'vim net-tools'
 RUN echo 'inetutils-ping git ssh-client'
 
