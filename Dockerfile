@@ -44,20 +44,20 @@ RUN echo 'installing avisdk python package'
 RUN pip install avisdk
 
 
-RUN echo 'get Avi fork of ansible-modules-extras ...' 
-RUN mkdir -p /etc/ansible/library && cd /etc/ansible/library
-RUN git clone https://github.com/avinetworks/avi_ansible_modules.git
+#RUN echo 'get Avi fork of ansible-modules-extras ...' 
+#RUN mkdir -p /etc/ansible/library && cd /etc/ansible/library
+#RUN git clone https://github.com/avinetworks/avi_ansible_modules.git
 
 
 RUN echo 'installing avidsk role ...'
-## install Avi ansible role 
+## install avisdk role 
 RUN ansible-galaxy install avinetworks.avisdk
 
-## added 20180206 
-RUN echo 'installing avidsk role ...'
+RUN echo 'installing aviconfig role ...'
+## install aviconfig role - added 20180206 
 RUN ansible-galaxy install avinetworks.aviconfig
 
-## below are not needed to run playbooks on existing avi install 
+## below items are not needed to run playbooks on existing avi install 
 ## RUN ansible-galaxy install avinetworks.docker
 RUN ansible-galaxy install avinetworks.avicontroller
 ## RUN ansible-galaxy install avinetworks.avise
