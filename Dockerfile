@@ -54,6 +54,7 @@ RUN echo 'installing avidsk role ...'
 RUN ansible-galaxy install avinetworks.avisdk
 
 ## added 20180206 
+RUN echo 'installing avidsk role ...'
 RUN ansible-galaxy install avinetworks.aviconfig
 
 ## below are not needed to run playbooks on existing avi install 
