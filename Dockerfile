@@ -1,5 +1,5 @@
 # Ansible setup for Avi Networks built from Ubuntu 16.04
-# version: 1.3
+# version: 1.6
 
 # TO DO 
 #  add volume statement to map to /tmp ?
@@ -40,23 +40,26 @@ RUN echo 'upgrading pip ...'
 RUN pip install --upgrade pip
 
 
+# install python sdk 
 RUN echo 'installing avisdk python package' 
 RUN pip install avisdk
 
 
+#no longer needed
 #RUN echo 'get Avi fork of ansible-modules-extras ...' 
 #RUN mkdir -p /etc/ansible/library && cd /etc/ansible/library
 #RUN git clone https://github.com/avinetworks/avi_ansible_modules.git
 
-#avi devops folder 
+## Clone Avi devops folder 
+RUN echo 'cloning Avi github devops folder ...'
 RUN git clone https://github.com/avinetworks/devops.git
 
-RUN echo 'installing avidsk role ...'
-## install avisdk role 
-RUN ansible-galaxy install avinetworks.avisdk
+## install avisdk role - no longer needed with ansible 2.5+
+#RUN echo 'installing avidsk role ...'
+#RUN ansible-galaxy install avinetworks.avisdk
 
+## install aviconfig role 
 RUN echo 'installing aviconfig role ...'
-## install aviconfig role - added 20180206 
 RUN ansible-galaxy install avinetworks.aviconfig
 
 ## below items are not needed to run playbooks on existing avi install 
