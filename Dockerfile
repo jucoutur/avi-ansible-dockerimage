@@ -1,5 +1,5 @@
 # Ansible setup for Avi Networks built from Ubuntu 16.04
-# version: 1.5
+# version: 1.6
 
 # TO DO 
 #  add volume statement to map to /tmp ?
