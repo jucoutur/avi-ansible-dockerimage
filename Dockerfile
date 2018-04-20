@@ -29,8 +29,10 @@ RUN apt-get update && apt-get install -y \
 	ssh-client
 
 RUN echo 'adding ppa repository for ansible to get latest version and install ansible ...' 
-RUN apt-add-repository -y ppa:ansible/ansible && apt-get update && apt-get install -y ansible \
+RUN apt-add-repository -y ppa:ansible/ansible && apt-get update && apt-get install ansible=2.5.0-1ppa~xenial \
 && rm -rf /var/lib/apt/lists/*
+# forcing 2.5.0 for the moment due to a bug in 2.5.1 breaking Avi roles
+# see https://github.com/ansible/ansible/issues/38991
 
 # if you dont add PPA repository, then old version of ansible get installed
 # best practice from docker is to clean up the apt cache by removing /var/lib/apt/lists 
