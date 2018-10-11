@@ -67,5 +67,7 @@ RUN ansible-galaxy install avinetworks.aviconfig
 RUN ansible-galaxy install avinetworks.avicontroller
 ## RUN ansible-galaxy install avinetworks.avise
 
-
+## install additional python packages to comply with aci_rest ansible module requirements when using XML
+RUN echo 'install lxml and xmljson package'
+RUN pip install lxml && pip install xmljson
 
