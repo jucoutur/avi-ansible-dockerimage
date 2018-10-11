@@ -71,3 +71,6 @@ RUN ansible-galaxy install avinetworks.avicontroller
 RUN echo 'install lxml and xmljson package'
 RUN pip install lxml && pip install xmljson
 
+## install pyvmomi for VMwware vSphere automation
+RUN echo 'install pyvmomi' 
+RUN pip install pyvmomi
